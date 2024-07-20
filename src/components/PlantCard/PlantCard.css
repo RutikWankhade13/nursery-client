@@ -3,8 +3,26 @@
     padding : 5px 20px;
     border-radius: 10px;
     margin: 20px 20px;
-
+position:relative;
 }
 .plant-title{
     font-size: 20px;
+}
+.plant-card-image{
+    height: 70px;
+    width: 100px;
+    object-fit: cover;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.plant-card-action-button{
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    padding: 3px 20px;
+    margin: 0 20px;
+    cursor: pointer;
+    text-decoration: none;
 }

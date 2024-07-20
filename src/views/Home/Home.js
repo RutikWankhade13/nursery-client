@@ -3,7 +3,8 @@ import "./Home.css"
 import PlantCard from '../../components/PlantCard/PlantCard'
 import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
-
+import imgAdd from "./add.png"
+import { Link } from 'react-router-dom'
 
 function Home() {
 
@@ -11,6 +12,7 @@ function Home() {
     const [plants, setPlants] = useState([])
 
     const loadPlants = async () => {
+
         toast.loading("Plant loading...")
 
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/plants`)
@@ -49,10 +51,15 @@ function Home() {
                         price={price}
                         image={image}
                         discription={discription}
-                    />)
+                        loadPlants={loadPlants}
+                        />
+                )
                 })
             }
             <Toaster />
+            <Link to="/add">
+            <img alt='' src={imgAdd} className='btn-add'/>
+            </Link>
         </div>
     )
 }
